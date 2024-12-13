@@ -5,6 +5,7 @@ import cookieParser from 'cookie-parser';
 import AuthRouter from './routes/auth.route.js';
 import connectDB from './config/db.js';
 import ProductRouter from './routes/product.route.js';
+import OrderRouter from './routes/order.route.js';
 
 dotenv.config();
 const app = express();
@@ -16,6 +17,7 @@ app.use(cookieParser());
 
 app.use("/api/auth", AuthRouter);
 app.use("/api/products", ProductRouter);
+app.use("/api/orders", OrderRouter);
 
 const PORT = process.env.PORT || 5000;
 
