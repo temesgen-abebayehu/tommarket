@@ -1,4 +1,4 @@
-import User from '../models/User.js';
+import User from '../models/user.model.js';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
@@ -9,7 +9,7 @@ const setCookie = (res, token) => {
     httpOnly: true,
     secure: process.env.NODE_ENV === 'production',
     sameSite: 'strict',
-    maxAge: 3600000,
+    maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
   });
 };
 
